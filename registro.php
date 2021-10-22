@@ -1,11 +1,9 @@
 <?php include("./includes/header.php"); ?>
-
+<title><?php echo basename(__FILE__, ".php"); ?></title>
+</head>
+<link rel="stylesheet" href="/includes/regis.css" ?>
 <div class="container-fluid">
-    <div class="d-flex columns align-items-center">
-        <div class="col-10">
-            <img src="./src/Dogefinance.png" class="img-fluid img-thumbnail" alt="Stonks">
-        </div>
-        <div class="col-2 card card-body">
+        <div class="men">
             <?php if (isset($_SESSION['message'])) { ?>
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     <?= $_SESSION['message'] ?>
@@ -14,9 +12,13 @@
                     </button>
                 </div>
             <?php session_unset(); } ?>
-            <form action="/includes/register_user.php" method="POST">
+            <div>
+                <img src="/src/Dogefinance.png" class="img" alt="Stonks">
+                <h5>DogeFinance</h5>
+            </div>
+            <form action="/includes/register_user.php" method="POST" class="form">
                 <div class="form-group">
-                    <input type="username" name="username" class="form-control" placeholder="Nomre de usuario:" required autofocus>
+                    <input type="username" name="username" class="form-control" placeholder="Nombre de usuario:" required autofocus>
                 </div>
                 <br>
                 <div class="form-group">
@@ -31,14 +33,13 @@
                     <input type="password" name="confirm_password" class="form-control" required placeholder="Confirmar contraseña:">
                 </div>
                 <br>
-                <button type="submit" class="w-100 btn btn-secondary" name="save_user">Registrarte</button>
+                <button type="submit" class="sub form-control" name="save_user">Registrarte</button>
                 <br>
                 <br>
                 <p>¿Ya tienes una cuenta?</p>
                 <a href="/index.php" style="color:black;">Iniciar Sesión</a>
             </form>
         </div>
-    </div>
 </div>
 
 <?php include("./includes/footer.php") ?>

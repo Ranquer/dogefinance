@@ -12,7 +12,7 @@
 
         
         if($row == 0){
-            header("Location: ../index.php");
+            header("Location: ../LogIn.php");
             $_SESSION['message_erro'] = 'Correo o contraseña incorrecto por favor inténtelo de nuevo';
         }
         else{ 
@@ -22,7 +22,7 @@
             $_SESSION['userName'] = $row['userName'];
             $_SESSION['password'] = $row['password'];
             //echo '<script type="text/javascript"> alert('.$row["id"].')</script>';
-            header("Location: ../desk.php");
+            header("Location: ../Escritorio.php");
         }
         //mysqli_free_result($res);
         //mysqli_close($con);

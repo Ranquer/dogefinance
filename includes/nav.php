@@ -2,9 +2,9 @@
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
-      <a class="dropdown-item" href="./desk.php">Desk</a>
-      <a class="dropdown-item" href="./perfil.php?id=<?php echo $_SESSION['id'];?>">Administrar Perfil</a>
-      <a class="dropdown-item" href="./cerrarsesion.php">Salir</a>
+      <a class="dropdown-item" style="color: white;" href="../desk.php">Escritorio</a>
+      <a class="dropdown-item" style="color: white;" href="./perfil.php?id=<?php echo $_SESSION['id'];?>">Administrar Perfil</a>
+      <a class="dropdown-item" style="color: white;" href="./cerrarsesion.php">Salir</a>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">

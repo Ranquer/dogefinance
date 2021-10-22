@@ -1,5 +1,10 @@
 <?php include("./includes/header.php") ?>
+<title><?php echo basename(__FILE__, ".php"); ?></title>
+</head>
 <?php include("./includes/nav.php") ?>
+
+<link rel="stylesheet" href="style.css">
+
 
 <?php session_start();
 $enter = $_SESSION['id'];
@@ -12,6 +17,7 @@ else{
     
 }
 ?>
+
 
 <?php
         if(isset($_POST['actualizar'])){
@@ -105,41 +111,35 @@ else{
 
 
 
-<div class="container-fluid">
-
+<div class="container">
     <br>
     <!-- Main content -->
     <section class="container-fluid">
-
         <div class="accordion" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
+                    <h2 class="mb">
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Datos del Usuario
                         </button>
                     </h2>
                 </div>
-
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
                         <!-- Main row -->
                         <div class="row">
                             <!-- Left col -->
-                            <div class="col-md-8">
-
+                            <div class="col-md-5">
                                 <div class="box box-primary">
                                     <div class="box-header with-border">
                                         <h3 class="box-title">Datos del Usuario</h3>
                                     </div>
-
                                     <form role="form" method="post" action="" enctype="multipart/form-data">
                                         <div class="box-body">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1" style="font-weight: bold;">Usuario</label>
                                                 <input type="text" name="usuario" class="form-control" value="<?php echo $_SESSION['userName'] ?>" disabled>
                                             </div>
-
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1" style="font-weight: bold;">Email</label>
                                                 <input type="text" name="email" class="form-control" placeholder="<?php echo $_SESSION['email'] ?>" disabled>
@@ -160,47 +160,31 @@ else{
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-
-
                             <!-- Main row -->
                             <div class="row">
                                 <!-- Left col -->
-                                <div class="col-md-8">
-
+                                <div class="col-md-5">
                                     <div class="box box-primary">
                                         <div class="box-header with-border">
                                             <h3 class="box-title">Modificar Datos del usuario</h3>
                                         </div>
-
                                         <form role="form" method="post" action="" enctype="multipart/form-data">
                                             <div class="box-body">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1" style="font-weight: bold;">Nuevo Nombre de Usuario</label>
                                                     <input type="text" name="usuario" class="form-control" placeholder="Nombre de Usuario" autocomplete="off">
                                                 </div>
-
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1" style="font-weight: bold;">Nuevo Email</label>
                                                     <input type="text" name="email" class="form-control" placeholder="Email" autocomplete="off">
                                                 </div>
-
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1" style="font-weight: bold;">Contraseña</label>
-
-
                                                     <div class="btn-group dropright" method="post">
-
                                                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             Modificar Contraseña
                                                         </button>
                                                         <div class="dropdown-menu">
-
-
-
-
-
-
-                                                        
                                                             <!-- Dropdown menu links -->
                                                             <div class="e-title">Contraseña Actual</div>
                                                             <div class="e-input"><input type="password" name="passActual" autocomplete="off"> </div>
@@ -210,18 +194,12 @@ else{
 
                                                             <div class="e-title">Confirmar Contraseña</div>
                                                             <div class="e-input"><input type="password" name="passNueva2" autocomplete="off"> </div>
-
                                                             <!--
                     <br>
                     <button type="submit" name="actualizar" class="btn btn-primary">Actualizar Contraseña</button>
                     -->
                                                         </div>
-
                                                     </div>
-
-
-
-
                                                     <br>
                                                     <br>
 
@@ -234,9 +212,6 @@ else{
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
                 <?php include("./includes/footer.php") ?>
