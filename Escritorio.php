@@ -1,33 +1,17 @@
 <?php include("./includes/header.php"); ?>
 <title><?php echo basename(__FILE__, ".php"); ?></title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./includes/styles.css">
 </head>
+
 <body>
-<?php include("./includes/nav.php"); session_start();?>
-
-<div class="d-xl-flex" id="wrapper">
-
-    <!-- <//?php// print "<p>El id es: $_SESSION[id]</p>"; ?>-->
-    <!-- Sidebar -->
-    <!--
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Listas de mercados</div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">The Berkshire Hathaway Portfolio</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Currency 2          </a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Currency 3          </a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Currency 4          </a>
-      </div>
-    </div>
-    -->
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
+    <?php include("./includes/nav.php"); session_start();?>
+    <br>
     <div class="container-fluid" id="page-content-wrapper">
-        <!--       <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Buscar</span>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div> -->
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Buscar</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
         <br>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -59,7 +43,8 @@
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="false" aria-controls="collapseOne" style="text-decoration: none; color: inherit;">
+                            aria-expanded="false" aria-controls="collapseOne"
+                            style="text-decoration: none; color: inherit;">
                             <b>La cartera de Berkshire Hathaway</b>
                         </button>
                     </h5>
@@ -100,38 +85,38 @@
 
 
           ?>
-                             <table class="table table-striped table-bordered">
-                                 <thead class="bg-dark">
-                                     <tr>
-                                         <th class="text-white">SYMBOL</th>
-                                         <th class="text-white">NOMBRE</th>
-                                         <th class="text-white">ULTIMO PRECIO</th>
-                                         <th class="text-white">CAMBIO</th>
-                                         <th class="text-white">CAMBIO EN %</th>
-                                         <th class="text-white">VOLUMEN</th>
-                                         <th class="text-white">VOLUMEN PROMEDIO (3 MESES)</th>
-                                         <th class="text-white">CAPITALIZACIÓN BURSÁTIL</th>
-                                     </tr>
-                                 </thead>
-                                 <?php
+                            <table class="table table-striped table-bordered">
+                                <thead class="bg-dark">
+                                    <tr>
+                                        <th class="text-white">SYMBOL</th>
+                                        <th class="text-white">NOMBRE</th>
+                                        <th class="text-white">ULTIMO PRECIO</th>
+                                        <th class="text-white">CAMBIO</th>
+                                        <th class="text-white">CAMBIO EN %</th>
+                                        <th class="text-white">VOLUMEN</th>
+                                        <th class="text-white">VOLUMEN PROMEDIO (3 MESES)</th>
+                                        <th class="text-white">CAPITALIZACIÓN BURSÁTIL</th>
+                                    </tr>
+                                </thead>
+                                <?php
             $decodedResponse = json_decode($response);
             foreach ($decodedResponse->{'finance'}->{'result'}[0]->{'quotes'} as $datos){?>
-                                 <tr>
-                                     <td><?php echo $datos->{'symbol'}; ?></td>
-                                     <td><?php echo $datos->{'shortName'}; ?></td>
-                                     <td><?php echo $datos->{'regularMarketPrice'}; ?></td>
-                                     <td><?php echo $datos->{'regularMarketChange'}; ?></td>
-                                     <td><?php echo $datos->{'regularMarketChangePercent'}; ?></td>
-                                     <td><?php echo $datos->{'regularMarketVolume'}; ?></td>
-                                     <td><?php echo $datos->{'averageDailyVolume3Month'}; ?></td>
-                                     <td><?php echo $datos->{'marketCap'}; ?></td>
-                                 </tr>
+                                <tr>
+                                    <td><?php echo $datos->{'symbol'}; ?></td>
+                                    <td><?php echo $datos->{'shortName'}; ?></td>
+                                    <td><?php echo $datos->{'regularMarketPrice'}; ?></td>
+                                    <td><?php echo $datos->{'regularMarketChange'}; ?></td>
+                                    <td><?php echo $datos->{'regularMarketChangePercent'}; ?></td>
+                                    <td><?php echo $datos->{'regularMarketVolume'}; ?></td>
+                                    <td><?php echo $datos->{'averageDailyVolume3Month'}; ?></td>
+                                    <td><?php echo $datos->{'marketCap'}; ?></td>
+                                </tr>
                                 <?php
             }
             ?>
-                             </table>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-            <?php include("./includes/footer.php") ?>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php include("./includes/footer.php"); ?>
