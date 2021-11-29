@@ -23,16 +23,7 @@ else{
     <?php include("./includes/nav.php"); session_start();?>
     <div class="container-fluid" id="page-content-wrapper">
         <br>
-        <form action ="/PerfilBusqueda.php">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Buscar</span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    id="symbol2" name="symbol2"
-                    aria-describedby="inputGroup-sizing-default">
-                <button  type="submit" value="Submit" class="btn btn-info">Buscar</button>
-            </div>
-        </form>
-        <br>
+        <?php include("./includes/search.php") ?>
         <div id="accordion">
             <?php 
                 //echo $_SESSION['id']; 

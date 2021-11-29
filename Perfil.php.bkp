@@ -1,0 +1,11 @@
+<?php include("./includes/header.php") ?>
+<title><?php echo basename(__FILE__, ".php"); ?></title>
+<link rel="stylesheet" href="/includes/styles.css">
+</head>
+
+<body>
+    <?php include("./includes/nav.php"); session_start();?>`
+    <div class="container-fluid" id="page-content-wrapper">
+        <?php include("./includes/search.php") ?>
+    </div>
+    <?php include("./includes/footer.php") ?>

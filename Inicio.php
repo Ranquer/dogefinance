@@ -23,7 +23,9 @@
         </nav>
     </div>
 
-    <img src="./src/dogecoin-surge.jpg" alt="Doge financian" id="top-main">
+    <picture>
+        <img srcet="./src/dogecoin-surge 640px.webp 640w, ./src/dogecoin-surge.webp 1920w" sizes="(max-width: 640px) 400px, 1920px" src="./src/dogecoin-surge 640px.webp" alt="Doge financian" id="top-main">
+    </picture>
 
 
     <div id="description">
